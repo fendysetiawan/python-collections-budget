@@ -18,15 +18,15 @@ def main():
             print('Sets are NOT equal by subset test')
 
     mls = '''
-    from . import Expense
-    expenses = Expense.Expenses()
-    expenses.read_expenses('data/spending_data.csv')
+from . import Expense
+expenses = Expense.Expenses()
+expenses.read_expenses('data/spending_data.csv')
     '''
-    print(timeit.timeit(stmt="expense.categorize_for_loop()",
+    print(timeit.timeit(stmt="expenses.categorize_for_loop()",
                         setup=mls,
                         number=100000,
                         globals=globals()))
-    print(timeit.timeit(stmt="expense.categorize_set_comprehension()",
+    print(timeit.timeit(stmt="expenses.categorize_set_comprehension()",
                         setup=mls,
                         number=100000,
                         globals=globals()))
